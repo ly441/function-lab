@@ -14,6 +14,7 @@ function distanceTravelledInFeet(start, destination) {
   return Math.abs(start - destination) * blockLengthInFeet;
 }
 
+
 function calculatesFarePrice(start, destination) {
   if (destination <= start) return 0;
 
@@ -22,8 +23,7 @@ function calculatesFarePrice(start, destination) {
   if (distance <= 400) {
     return 0;
   } else if (distance > 400 && distance <= 2000) {
-    // Round the result to two decimal places
-    return Math.round((distance - 400) * 0.02 * 100) / 100;
+    return parseFloat(((distance - 400) * 0.02).toFixed(2));
   } else if (distance > 2000 && distance <= 2500) {
     return 25;
   } else {
